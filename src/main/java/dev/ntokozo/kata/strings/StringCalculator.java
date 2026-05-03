@@ -1,8 +1,5 @@
-package dev.ntokozo.kata.stringcalculator;
+package dev.ntokozo.kata.strings;
 
-import javax.swing.text.html.Option;
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.Optional;
 
 public class StringCalculator {

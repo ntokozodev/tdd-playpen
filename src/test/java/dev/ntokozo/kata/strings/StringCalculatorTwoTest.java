@@ -1,4 +1,4 @@
-package dev.ntokozo.kata.stringcalculator;
+package dev.ntokozo.kata.strings;
 
 
 import org.junit.jupiter.api.Test;

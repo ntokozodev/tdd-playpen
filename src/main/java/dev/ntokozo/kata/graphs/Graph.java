@@ -42,4 +42,39 @@ public class Graph {
 
         return false; // Looked everywhere, no path.
     }
+
+    public Integer calculateShortestDistance(String start, String target) {
+        if (start.equals(target))
+            return 0;
+
+        Queue<String> queue = new LinkedList<>();
+        Set<String> visited = new HashSet<>();
+
+        queue.add(start);
+        visited.add(start);
+
+        int distance = 0;
+
+        while (!queue.isEmpty()) {
+            int nodeAtThisLevel = queue.size(); // Lock the current wave size
+            distance++;
+
+            for (int i = 0; i < nodeAtThisLevel; i++) {
+                String current = queue.poll();
+                List<String> neighbors = adjacencyList.getOrDefault(current, new ArrayList<>());
+
+                for (String neighbor : neighbors) {
+                    if (neighbor.equals(target))
+                        return distance; // Found in current wave!
+
+                    if (!visited.contains(neighbor)) {
+                        visited.add(neighbor);
+                        queue.add(neighbor);
+                    }
+                }
+            }
+        }
+
+        return -1; // Looked everywhere, no connection.
+    }
 }

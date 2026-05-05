@@ -65,6 +65,7 @@ public class GraphTest {
     void calculateShortestDistance_givenMultiplePaths_shouldReturnShortest() {
         // Path 1: A -> B -> C (2 steps)
         // Path 2: A -> D -> E -> C (3 steps)
+        var expected = 2;
         var graph = new Graph();
         graph.addEdge("A", "B");
         graph.addEdge("B", "C");
@@ -72,7 +73,6 @@ public class GraphTest {
         graph.addEdge("D", "E");
         graph.addEdge("E", "C");
 
-        var expected = 2;
         var result = graph.calculateShortestDistance("A", "C");
         
         assertEquals(expected, result);

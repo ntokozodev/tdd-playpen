@@ -60,8 +60,8 @@ public class Graph {
             distance++;
 
             for (int i = 0; i < nodeAtThisLevel; i++) {
-                String current = queue.poll();
-                List<String> neighbors = adjacencyList.getOrDefault(current, new ArrayList<>());
+                var current = queue.poll();
+                var neighbors = adjacencyList.getOrDefault(current, new ArrayList<>());
 
                 for (String neighbor : neighbors) {
                     if (neighbor.equals(target))
